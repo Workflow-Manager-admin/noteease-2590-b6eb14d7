@@ -1,0 +1,22 @@
+<div class="sidebar-header">
+  <h2>Notes</h2>
+  <button class="add-note-btn" (click)="onAdd()" title="Add Note" aria-label="Add Note">
+    +
+  </button>
+</div>
+<ul class="notes-list">
+  <li *ngFor="let note of notes"
+      [class.selected]="note.id === selectedNoteId"
+      (click)="onSelect(note.id)">
+    <div class="note-row">
+      <span class="note-title">{{ note.title || '(No Title)' }}</span>
+      <button
+        class="delete-btn"
+        title="Delete"
+        (click)="onDelete(note.id, $event)">
+        &times;
+      </button>
+    </div>
+    <span class="note-snippet">{{ note.content | slice:0:32 }}<span *ngIf="note.content.length > 32">…</span></span>
+  </li>
+</ul>

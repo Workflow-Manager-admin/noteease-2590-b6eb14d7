@@ -1,0 +1,23 @@
+<div class="note-detail-container">
+  <input
+    type="text"
+    class="note-title-input"
+    [(ngModel)]="title"
+    maxlength="80"
+    placeholder="Title" />
+  <textarea
+    class="note-content-input"
+    [(ngModel)]="content"
+    rows="8"
+    placeholder="Write your note here...">
+  </textarea>
+  <div class="info">
+    <span>Created: {{ note.created | date:'short' }}</span>
+    <span>Updated: {{ note.updated | date:'short' }}</span>
+  </div>
+  <button class="save-btn"
+    (click)="onSave()"
+    [disabled]="!title && !content">
+    Save
+  </button>
+</div>

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  background: #f8fafc;
+  color: #222;
+}
+
+/* Inter font fallback for modern minimalist look */
